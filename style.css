@@ -1,0 +1,692 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(to right, #ff9900, #ff6600);
+    color: white;
+    padding: 20px 20px; /* Reduced padding */
+    text-align: center;
+    position: relative;
+}
+
+header .hero {
+    margin-bottom: 10px; /* Add spacing between hero and nav */
+}
+
+header .hero h1 {
+    font-size: 2rem; /* Reduced font size */
+    margin: 0;
+}
+
+header .hero p {
+    font-size: 1rem; /* Reduced font size */
+    margin: 10px 0;
+}
+
+header .btn {
+    background-color: white;
+    color: #ff6600;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header .btn:hover {
+    background-color: #ff6600;
+    color: white;
+}
+
+/* Navigation Bar Styles */
+header nav {
+    background-color: #222;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: #ff9900;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+header {
+    background: linear-gradient(to right, rgba(255, 153, 0, 0.8), rgba(255, 102, 0, 0.8)), 
+                url('images/hero-background.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: backgroundMove 10s linear infinite;
+}
+
+header .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+header .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+header .btn {
+    background-color: white;
+    color: #ff6600;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    animation: fadeIn 1s ease-in-out;
+}
+
+header .btn:hover {
+    background-color: #ff6600;
+    color: white;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes backgroundMove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #222;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+nav {
+    background-color: #222;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #ff9900;
+    border-radius: 5px;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    top: 100%;
+    left: 0;
+}
+
+nav ul li:hover .dropdown {
+    display: block;
+}
+
+.dropdown li {
+    padding: 10px;
+}
+
+.dropdown li a {
+    color: white;
+    text-decoration: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #222;
+        position: absolute;
+        top: 50px;
+        width: 100%;
+        left: 0;
+    }
+    
+    nav ul li {
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+
+    header .hero h1 {
+        font-size: 2rem;
+    }
+
+    header .hero p {
+        font-size: 1rem;
+    }
+
+    #services ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .service-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    #testimonials {
+        padding: 40px 10px;
+    }
+}
+
+section {
+    padding: 40px 20px;
+    background: white;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 70px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+}
+
+input, textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    background: linear-gradient(to right, #111, #333);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #ff9900;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer .social-links {
+    margin-top: 10px;
+}
+
+footer .social-links a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+footer .social-links img {
+    width: 24px;
+    height: 24px;
+}
+
+#testimonials {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+#testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.testimonial-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px); /* Moves the card slightly upward */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Adds a stronger shadow on hover */
+    background-color: #f9f9f9;
+}
+
+.testimonial-image {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+    overflow: hidden;
+    border-radius: 50%; /* Makes the container circular */
+    border: 3px solid #ff9900; /* Optional: Add a border for styling */
+}
+
+.testimonial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the circle without distortion */
+    object-position: center; /* Centers the image within the circle */
+}
+
+.testimonial-image:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.testimonial-text {
+    text-align: left;
+    flex-grow: 1;
+}
+
+.testimonial-text p {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.testimonial-text h4 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+#services {
+    background: linear-gradient(to bottom, #ffffff, #f4f4f4);
+    padding: 60px 20px;
+}
+
+#services h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+#services ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+#services li {
+    text-align: center;
+}
+
+.service-btn {
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    padding: 20px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-btn:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-btn img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.service-btn span {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* About Section */
+#about {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+#about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#about p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+#about strong {
+    color: #ff6600;
+    font-weight: bold;
+}
+
+.about-us-image {
+    width: 80%; /* Set the width to 80% of the container */
+    max-width: 400px; /* Limit the maximum width to 400px */
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Center the image */
+    margin: 20px auto; /* Add spacing and center the image */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+/* Contact Section */
+#contact {
+    background-color: #222;
+    color: white;
+    padding: 60px 20px;
+}
+
+#btc-price {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#btc-price h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.price-ticker {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff9900;
+}
+
+.price-ticker button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+price-ticker button:hover {
+    background-color: #ff9900;
+    color: white;
+}
+
+#cta {
+    background: linear-gradient(to right, #ff9900, #ff6600);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+#cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#cta p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+#cta .btn {
+    background-color: white;
+    color: #ff6600;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#cta .btn:hover {
+    background-color: #ff6600;
+    color: white;
+}
+
+#features {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#features h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.feature {
+    max-width: 300px;
+    text-align: center;
+}
+
+.feature img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.feature p {
+    font-size: 1rem;
+    color: #555;
+}
+
+#faq {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: left;
+}
+
+#faq h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-item h3 {
+    font-size: 1.2rem;
+    color: #ff6600;
+}
+
+.faq-item p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+#confirmation-message {
+    font-size: 1rem;
+    color: green;
+    margin-top: 10px;
+    text-align: center;
+    display: none; /* Hide the message by default */
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Manager Login</h1>
+    </header>
+    <section id="login">
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            <button type="submit" class="btn">Login</button>
+        </form>
+    </section>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('http://localhost:5000/manager/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password }),
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    alert('Login successful!');
+                    localStorage.setItem('token', data.token); // Save token for authentication
+                    window.location.href = 'manager.html'; // Redirect to dashboard
+                } else {
+                    const error = await response.json();
+                    alert(error.message);
+                }
+            } catch (err) {
+                console.error('Error:', err);
+                alert('An error occurred. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
